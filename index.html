@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isabella Viana · Design Systems e interfaces em código</title>
+    <meta
+      name="description"
+      content="Designer de interfaces e Design Systems que trabalha direto em código. Vue no dia a dia, aprofundando em React."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Decide o tema antes da página aparecer, pra não piscar.
+      // Ordem: escolha salva > preferência do sistema.
+      ;(function () {
+        var saved = null
+        try { saved = localStorage.getItem('theme') } catch (e) {}
+        var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
+        document.documentElement.dataset.theme = saved || (prefersLight ? 'light' : 'dark')
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
