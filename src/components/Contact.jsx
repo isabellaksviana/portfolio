@@ -21,11 +21,18 @@ export default function Contact() {
       <ul className="contact-links">
         {contact.links.map((link) => {
           const Icon = icons[link.icon]
+          // e-mail abre o app de e-mail; LinkedIn e GitHub, numa aba nova
+          const isExternal = link.href.startsWith('http')
           return (
             <li key={link.label}>
-              <a className="button" href={link.href}>
+              <a
+                className="button"
+                href={link.href}
+                {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+              >
                 {Icon && <Icon size={18} aria-hidden="true" />}
                 {link.label}
+                {isExternal && <span className="sr-only"> (abre em nova aba)</span>}
               </a>
             </li>
           )

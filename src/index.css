@@ -205,6 +205,16 @@ a {
   display: block;
 }
 
+/* Texto só pra leitor de tela (ex.: avisar que o link abre em nova aba) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* ============ Seções ============ */
 .section {
   padding: var(--space-section) 0 0;

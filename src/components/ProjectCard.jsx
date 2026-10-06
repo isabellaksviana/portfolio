@@ -35,18 +35,25 @@ export default function ProjectCard({ project }) {
         <ul className="project-card-actions">
           {demo && (
             <li>
-              <a href={demo} className="project-card-link-primary">
+              <a
+                href={demo}
+                className="project-card-link-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Ver projeto
                 <ArrowRight aria-hidden="true" />
+                <span className="sr-only"> (abre em nova aba)</span>
               </a>
             </li>
           )}
           {repo && (
             <li>
-              <a href={repo}>
+              <a href={repo} target="_blank" rel="noopener noreferrer">
                 <GithubIcon />
                 GitHub
                 <ArrowUpRight aria-hidden="true" />
+                <span className="sr-only"> (abre em nova aba)</span>
               </a>
             </li>
           )}
