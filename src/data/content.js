@@ -4,9 +4,9 @@
 
 export const profile = {
   name: 'Isabella Viana',
-  role: 'Design Systems · Interfaces em código',
+  role: 'UX/UI & Front-end',
   // Cada item é uma linha do título.
-  headline: ['Desenho interfaces e', 'construo o código delas.'],
+  headline: ['Projeto interfaces e', 'construo o código delas.'],
   intro:
     'Penso em produto, consistência e viabilidade técnica ao mesmo tempo sem tratar o handoff como uma fronteira.',
 };
@@ -50,30 +50,34 @@ export const experience = [
 // Endereço do GitHub: usado nos cards de projeto e no contato
 const github = 'https://github.com/isabellaksviana';
 
+// cover: a palavra grande da capa (é decoração; o título de verdade vem logo abaixo)
 export const projects = [
   {
-    icon: 'layers',
+    cover: 'Design System',
     title: 'Design System próprio',
     status: 'Em construção',
-    description: 'Tokens, componentes acessíveis e documentação no Storybook, construído do zero.',
+    description:
+      'Design system em React com tokens, componentes reutilizáveis, Storybook e código aberto.',
     stack: ['React', 'TypeScript', 'Storybook'],
     demo: 'https://ds-lab.isabellaviana.com',
     repo: `${github}/ds-lab`,
   },
   {
-    icon: 'egg',
+    cover: 'Tamagochi',
     title: 'Tamagochi',
     status: 'No ar',
-    description: 'Um bichinho virtual que sobrevive ao F5, criado para praticar Vue 3 com TypeScript.',
+    description:
+      'Pet virtual em Vue 3 e TypeScript, com estado reativo e dados salvos no navegador.',
     stack: ['Vue', 'TypeScript', 'Vite'],
     demo: 'https://tamagochi.isabellaviana.com',
     repo: `${github}/tamagochi`,
   },
   {
-    icon: 'globe',
+    cover: 'Portfólio',
     title: 'Este portfólio',
     status: 'No ar',
-    description: 'Construído com React, CSS puro e design tokens, com suporte a tema claro e escuro.',
+    description:
+      'Portfólio em React e CSS que consome o meu design system como dependência, com tema claro e escuro.',
     stack: ['React', 'Vite', 'CSS'],
     repo: `${github}/portfolio`,
   },
@@ -136,7 +140,11 @@ export const contact = {
   text: ['Quer conversar sobre uma vaga ou um projeto?', 'Me chama.'],
   links: [
     { label: 'E-mail', href: 'mailto:bellakaroline1@gmail.com', icon: 'mail' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/isabella-viana/', icon: 'linkedin' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/isabella-viana/',
+      icon: 'linkedin',
+    },
     { label: 'GitHub', href: github, icon: 'github' },
   ],
 };

@@ -15,8 +15,11 @@ export default function App() {
       <main id="conteudo">
         <Hero />
         <Projects />
-        <Experience />
-        <Principles />
+        {/* Faixa: Experiência e Como eu trabalho dividem o mesmo fundo */}
+        <div className="band">
+          <Experience />
+          <Principles />
+        </div>
         <About />
         <Contact />
       </main>

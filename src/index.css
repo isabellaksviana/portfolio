@@ -1,6 +1,6 @@
 :root {
   --space-section: clamp(3.625rem, 10vw, 6.3125rem);
-  --container: 60.75rem;
+  --container: 68rem; /* largura que cabe o hero com as peças e 3 cards lado a lado */
   --gutter: clamp(0.875rem, 4vw, 1.8125rem);
 }
 
@@ -178,9 +178,17 @@ a {
   gap: 0;
 }
 
+/* Texto à esquerda, peças do ds-lab à direita. No celular, as peças descem. */
+.hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); /* o texto ganha mais espaço */
+  gap: 2rem;
+  align-items: center;
+}
+
 .hero-title {
   margin: 1.125rem 0 1.375rem;
-  font-size: clamp(2.25rem, 7vw, 4.0625rem);
+  font-size: clamp(2.25rem, 4.4vw, 3rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 700;
@@ -197,6 +205,210 @@ a {
   flex-wrap: wrap;
   gap: 0.6875rem;
   margin-top: 2.25rem;
+}
+
+/* ---- Cena: peças soltas, cada uma posicionada em % da cena ---- */
+.hero-scene {
+  position: relative;
+  height: 32rem;
+}
+
+.piece {
+  position: absolute;
+}
+
+/* O balanço fica no filho: o transform da própria .piece fica livre pra paralaxe */
+.piece > * {
+  animation: piece-float 6s ease-in-out infinite;
+}
+
+.piece:nth-child(2n) > * {
+  animation-duration: 7.5s;
+  animation-delay: -2s;
+}
+
+.piece:nth-child(3n) > * {
+  animation-duration: 8.5s;
+  animation-delay: -4s;
+}
+
+@keyframes piece-float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece > * {
+    animation: none;
+  }
+}
+
+.piece-console {
+  top: 18%;
+  left: 0;
+  z-index: 1;
+}
+.piece-card {
+  top: 3%;
+  right: 0;
+  z-index: 2;
+}
+.piece-ds {
+  top: 6%;
+  left: 0;
+}
+.piece-rose {
+  top: 67%;
+  right: 4%;
+}
+.piece-badge {
+  top: 70%;
+  left: 40%;
+}
+.piece-button {
+  top: 84%;
+  right: 0;
+}
+.piece-tag {
+  top: 91%;
+  left: 10%;
+}
+
+/* A rosa é vermelha: exceção só do portfólio, não é a variante danger do DS
+   (no DS, vermelho quer dizer perigo). Ver COMBINADOS. */
+.piece-rose .iconbox {
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+/* sombra só nas peças grandes, pra parecerem "em cima" da página */
+.piece-console > *,
+.piece-card > * {
+  box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.45);
+}
+
+[data-theme='light'] .piece-console > *,
+[data-theme='light'] .piece-card > * {
+  box-shadow: 0 12px 32px -14px rgb(74 44 181 / 0.28);
+}
+
+.piece-card .card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+}
+
+.piece-card b {
+  display: block;
+  font-size: 0.9375rem;
+}
+
+.piece-card small {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+/* Janela de código: cores do código saem dos tokens */
+.code-window {
+  width: 21rem;
+  max-width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.code-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4375rem;
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* as três bolinhas são decoração: cores fixas, iguais nos dois temas */
+.code-window-bar i {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.code-window-bar i:nth-child(2) {
+  background: #febc2e;
+}
+.code-window-bar i:nth-child(3) {
+  background: #28c840;
+}
+
+.code-window-bar span {
+  margin-left: 0.5rem;
+  font: 400 0.75rem var(--font-mono);
+  color: var(--text-muted);
+}
+
+.code-window pre {
+  margin: 0;
+  padding: 1rem 1.125rem 1.25rem;
+  font: 400 0.875rem/1.7 var(--font-mono);
+  white-space: pre-wrap;
+}
+
+.code-keyword {
+  color: var(--primary);
+}
+.code-string {
+  color: var(--secondary);
+}
+.code-component {
+  color: var(--success);
+}
+.code-punct {
+  color: var(--text-muted);
+}
+
+/* Celular: a cena desce pra baixo do texto, mais baixa e com menos peças */
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-scene {
+    height: 24rem;
+  }
+
+  .piece-console {
+    top: 22%;
+    left: 0;
+    right: 0;
+  }
+  .piece-console .code-window {
+    width: 100%;
+  }
+  .piece-card {
+    top: 0;
+    left: auto;
+    right: 0;
+  }
+  .piece-ds {
+    top: 4%;
+    left: 0;
+  }
+  .piece-rose {
+    top: 86%;
+    right: 4%;
+  }
+  .piece-tag {
+    top: 90%;
+    left: 2%;
+  }
+  .piece-badge,
+  .piece-button {
+    display: none;
+  }
 }
 
 /* Quebra de linha escolhida no texto: cada .line começa numa linha nova.
@@ -234,15 +446,10 @@ a {
   gap: 1rem;
 }
 
-/* "Destaque + dupla": o 1º card ocupa a linha toda, os outros 2 lado a lado.
-   Os 3 têm a mesma estrutura; o destaque vem só da largura. */
-@media (min-width: 760px) {
+/* Três lado a lado: 3 → 1, pra nunca sobrar um card sozinho na última linha */
+@media (min-width: 900px) {
   .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .project-grid > :first-child {
-    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -250,22 +457,63 @@ a {
 .project-grid .card {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  container-type: inline-size; /* a letra da capa acompanha a largura do card */
 }
 
-.project-card-head {
+/* ---- Capa tipográfica: o nome do projeto enorme, em duas linhas cortadas ---- */
+.project-cover {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  color: var(--border); /* baixo contraste de propósito: é decoração */
+  font-family: 'League Gothic', 'Arial Narrow', sans-serif;
+  font-size: 27cqi;
+  line-height: 0.88;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.project-cover span {
+  display: block;
+  transition: transform 1.2s ease;
+}
+
+/* cada linha começa num ponto diferente da palavra */
+.project-cover span:first-child {
+  transform: translateX(-4%);
+}
+
+.project-cover span:last-child {
+  transform: translateX(-38%);
+}
+
+/* no hover do card, as linhas deslizam em direções opostas */
+.project-grid .card:hover .project-cover span:first-child {
+  transform: translateX(-14%);
+}
+
+.project-grid .card:hover .project-cover span:last-child {
+  transform: translateX(-28%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cover span {
+    transition: none;
+  }
 }
 
 .project-card-body {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.75rem;
   flex: 1;
-  min-width: 0;
-  align-self: stretch;
 }
 
 /* Tags sempre no pé do texto: alinham entre os cards da mesma linha,
@@ -293,10 +541,9 @@ a {
 
 .project-card-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1.25rem;
-  margin-top: 1.5rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
 }
@@ -325,17 +572,26 @@ a {
   height: 1rem;
 }
 
-/* No celular: ícone e badge numa linha, o texto ganha a largura toda embaixo */
-@media (max-width: 480px) {
-  .project-card-head {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+/* ============ Faixa ============ */
+/* Experiência e Como eu trabalho dividem uma faixa no tom do cartão,
+   com uma linha separando as duas seções */
+.band {
+  margin-top: var(--space-section);
+  padding-bottom: var(--space-section);
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+}
 
-  .project-card-body {
-    order: 1;
-    flex-basis: 100%;
-  }
+/* a linha vai só da largura do conteúdo (sem o respiro lateral do container) */
+.band > .section + .section > .container {
+  padding-top: var(--space-section);
+  background: linear-gradient(var(--border), var(--border)) center top /
+    calc(100% - 2 * var(--gutter)) 1px no-repeat;
+}
+
+/* a linha da última vaga ficaria colada na linha que separa as seções */
+.band .job:last-child {
+  border-bottom: 0;
 }
 
 /* ============ Experiência ============ */
