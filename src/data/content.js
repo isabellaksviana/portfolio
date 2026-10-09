@@ -11,13 +11,10 @@ export const profile = {
     'Penso em produto, consistência e viabilidade técnica ao mesmo tempo sem tratar o handoff como uma fronteira.',
 };
 
+// Formação: aparece na faixa de fatos, entre a Experiência e o Como eu trabalho.
 export const about = {
   education: 'Análise e Desenvolvimento de Sistemas',
-  paragraphs: [
-    'Trabalho na fronteira entre design e código. Desenho a interface, construo o componente e escrevo as decisões, pra que o time consiga usar, revisar e evoluir o que foi feito.',
-    'Gosto de sistema: tokens, padrões, nomes claros e convenções escritas. Pra mim, um bom Design System é aquele que o time usa sem precisar perguntar.',
-    'Agora quero fazer parte de um time de engenharia. Busco um lugar com troca técnica, code review e pessoas mais experientes com quem aprender, onde o meu olhar de produto e de interface some ao time.',
-  ],
+  educationDetail: 'concluída em 2022',
 };
 
 export const experience = [
@@ -110,11 +107,14 @@ export const principles = {
   ],
 };
 
+// Faixa entre a Experiência e o Como eu trabalho: formação + o que eu uso no dia a dia.
 export const skills = {
   daily: [
     'HTML',
     'CSS',
     'JavaScript',
+    'TypeScript',
+    'React',
     'Vue 3',
     'Vuetify',
     'Storybook',
@@ -122,7 +122,6 @@ export const skills = {
     'Vite',
     'Figma',
   ],
-  learning: ['React', 'TypeScript'],
 };
 
 // Rodapé: cada linha vira um rótulo mono.

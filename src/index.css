@@ -572,27 +572,62 @@ a {
   height: 1rem;
 }
 
-/* ============ Faixa ============ */
-/* Experiência e Como eu trabalho dividem uma faixa no tom do cartão,
-   com uma linha separando as duas seções */
+/* ============ Faixas ============ */
+/* Experiência e Como eu trabalho ficam em faixas no tom do cartão.
+   Entre elas, a faixa de fatos no fundo normal faz a pausa. */
 .band {
-  margin-top: var(--space-section);
   padding-bottom: var(--space-section);
   background: var(--surface);
   border-block: 1px solid var(--border);
 }
 
-/* a linha vai só da largura do conteúdo (sem o respiro lateral do container) */
-.band > .section + .section > .container {
-  padding-top: var(--space-section);
-  background: linear-gradient(var(--border), var(--border)) center top /
-    calc(100% - 2 * var(--gutter)) 1px no-repeat;
+.section + .band {
+  margin-top: var(--space-section);
 }
 
-/* a linha da última vaga ficaria colada na linha que separa as seções */
-.band .job:last-child {
-  border-bottom: 0;
+/* ---- Faixa de fatos: formação + dia a dia, separados por uma linha vertical ---- */
+.facts {
+  padding: 3.25rem 0;
 }
+
+.facts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 0;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 2.5rem;
+}
+
+.fact + .fact {
+  flex: 1;
+  padding-left: 2.5rem;
+  border-left: 1px solid var(--border);
+}
+
+.fact-value {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.fact-detail {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* No celular, um embaixo do outro, sem a linha vertical */
+@media (max-width: 720px) {
+  .fact + .fact {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
 
 /* ============ Experiência ============ */
 .timeline {
@@ -692,31 +727,6 @@ a {
 .principle p {
   color: var(--text-muted);
   font-size: 0.9375rem;
-}
-
-/* ============ Sobre ============ */
-.prose {
-  display: flex;
-  flex-direction: column;
-  gap: 1.125rem;
-  max-width: 65ch;
-  font-size: 1.0625rem;
-}
-
-/* Fichas embaixo do texto: formação e skills, cada uma com rótulo mono. */
-.about-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem 2.5rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.about-fact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 /* ============ Contato ============ */
