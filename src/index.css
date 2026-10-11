@@ -600,12 +600,6 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-.fact-now .fact-value {
-  font-size: 1.4375rem;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
-}
-
 /* Texto corrido do "agora": cinza, um pouco maior que o corpo.
    O negrito acende pro tom do texto: quem só passa o olho lê os destaques. */
 .fact-text {
