@@ -3,7 +3,6 @@ import { profile } from '../data/content.js'
 
 const nav = [
   { href: '#projetos', label: 'Projetos' },
-  { href: '#experiencia', label: 'Experiência' },
   { href: '#contato', label: 'Contato' },
 ]
 

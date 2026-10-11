@@ -1,6 +1,5 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
-import Experience from './components/Experience.jsx'
 import Projects from './components/Projects.jsx'
 import Facts from './components/Facts.jsx'
 import Principles from './components/Principles.jsx'
@@ -15,10 +14,7 @@ export default function App() {
       <main id="conteudo">
         <Hero />
         <Projects />
-        {/* Duas faixas no tom do cartão, com a faixa de fatos no fundo normal entre elas */}
-        <div className="band">
-          <Experience />
-        </div>
+        {/* Fatos no fundo normal, separados dos projetos por uma linha; depois, a faixa no tom do cartão */}
         <Facts />
         <div className="band">
           <Principles />

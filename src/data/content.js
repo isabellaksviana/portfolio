@@ -11,38 +11,27 @@ export const profile = {
     'Penso em produto, consistência e viabilidade técnica ao mesmo tempo sem tratar o handoff como uma fronteira.',
 };
 
-// Formação: aparece na faixa de fatos, entre a Experiência e o Como eu trabalho.
+// Faixa de fatos, logo depois dos projetos.
+// "agora" fica numa linha própria em cima; formação e dia a dia, embaixo.
+export const now = {
+  title: 'UX/UI Designer na Alfaneo',
+  detail: 'SaaS jurídico com IA · desde set 2025',
+  // O texto é uma lista de pedaços: texto solto é normal, { bold } aparece em negrito.
+  text: [
+    'Criei e implementei ',
+    { bold: 'dois design systems' },
+    ', com ',
+    { bold: 'mais de 40 componentes cada' },
+    '. No dia a dia, ',
+    { bold: 'implemento as interfaces do produto em código' },
+    ', considerando acessibilidade e consistência visual',
+  ],
+};
+
 export const about = {
   education: 'Análise e Desenvolvimento de Sistemas',
   educationDetail: 'concluída em 2022',
 };
-
-export const experience = [
-  {
-    company: 'Alfaneo',
-    role: 'UX/UI Designer Pleno',
-    period: 'set 2025 — atual',
-    context: 'SaaS jurídico com IA',
-    items: [
-      'Criei e implementei em código dois Design Systems, documentados no Storybook. O primeiro virou a biblioteca compartilhada do time de engenharia; o segundo nasceu como pacote versionado e é a base da nova geração de produtos.',
-      'Estruturei os tokens em camadas, separando paleta e significado, com temas claro e escuro e convenções de uso documentadas.',
-      'Implemento telas a partir das histórias de usuário, com um contrato de dados que permite ao desenvolvimento conectar a lógica sem reescrever a interface.',
-      'Considero acessibilidade nas decisões de interface, incluindo contraste, legibilidade, zoom e adaptação dos componentes ao espaço disponível.',
-      'Refino requisitos com produto e engenharia, definindo fluxos, padrões e estados de interface.',
-    ],
-  },
-  {
-    company: 'Globoo',
-    role: 'UX/UI Designer',
-    period: 'mar 2025 — set 2025',
-    context: 'Fintech',
-    items: [
-      'Redesenhei o aplicativo inteiro, reestruturando os fluxos principais pra melhorar a navegação e a usabilidade.',
-      'Como única pessoa de UX, conduzi as decisões de interface de ponta a ponta, em contato direto com o desenvolvimento.',
-      'Criei a base visual do produto, com padrões reutilizáveis e protótipos de alta fidelidade.',
-    ],
-  },
-];
 
 // Endereço do GitHub: usado nos cards de projeto e no contato
 const github = 'https://github.com/isabellaksviana';
@@ -87,27 +76,27 @@ export const principles = {
     {
       icon: 'file',
       title: 'A decisão fica escrita',
-      text: 'Ninguém precisa adivinhar o porquê.',
+      text: 'Regras, tokens e componentes documentados no Storybook.',
     },
     {
       icon: 'component',
       title: 'Implementação faz parte da decisão',
-      text: 'O que desenho precisa fazer sentido no código.',
+      text: 'Testo a ideia no navegador antes de fechar o layout.',
     },
     {
       icon: 'box',
       title: 'Componente é contrato',
-      text: 'API pensada pra quem vai usar.',
+      text: 'Props e comportamentos definidos pra quem vai usar.',
     },
     {
       icon: 'check',
       title: 'IA como ferramenta',
-      text: 'O critério de revisão é meu.',
+      text: 'Faz parte do fluxo; a revisão e a decisão final são minhas.',
     },
   ],
 };
 
-// Faixa entre a Experiência e o Como eu trabalho: formação + o que eu uso no dia a dia.
+// Faixa de fatos: o que eu uso no dia a dia.
 export const skills = {
   daily: [
     'HTML',
