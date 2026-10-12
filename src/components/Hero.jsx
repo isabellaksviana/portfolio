@@ -1,6 +1,7 @@
 import { ArrowDown, Send, Cat, Rose } from 'lucide-react';
 import { profile } from '../data/content.js';
 import { Button, Card, Tag, Badge, IconBox } from 'ds-lab';
+import CodeWindow from './CodeWindow.jsx';
 
 export default function Hero() {
   return (
@@ -37,34 +38,7 @@ export default function Hero() {
         {/* Peças do ds-lab flutuando. É decoração: inert tira do Tab e do leitor de tela */}
         <div className="hero-scene" aria-hidden="true" inert>
           <div className="piece piece-console">
-            <div className="code-window">
-              <div className="code-window-bar">
-                <i></i>
-                <i></i>
-                <i></i>
-                <span>Hero.tsx</span>
-              </div>
-              <pre>
-                <code>
-                  <span className="code-keyword">import</span>
-                  <span className="code-punct"> {'{'} </span>
-                  <span className="code-component">Button</span>
-                  <span className="code-punct"> {'}'} </span>
-                  <span className="code-keyword">from</span>
-                  <span className="code-string"> 'ds-lab'</span>
-                  {'\n\n'}
-                  <span className="code-punct">{'<'}</span>
-                  <span className="code-component">Button</span>
-                  {'\n  label'}
-                  <span className="code-punct">=</span>
-                  <span className="code-string">"Ver projetos"</span>
-                  {'\n  variant'}
-                  <span className="code-punct">=</span>
-                  <span className="code-string">"primary"</span>
-                  <span className="code-punct">{'\n/>'}</span>
-                </code>
-              </pre>
-            </div>
+            <CodeWindow />
           </div>
           <div className="piece piece-card">
             <Card>
