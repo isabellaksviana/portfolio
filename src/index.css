@@ -238,9 +238,52 @@ a {
   }
 }
 
+/* Botão de pausar no canto de cima da cena, com cara de tag
+   (fica fora da cena porque ela é inert; ver Hero.jsx) */
+.hero-side {
+  position: relative;
+}
+
+.hero-pause {
+  position: absolute;
+  top: 6%;
+  left: 0;
+  z-index: 3;
+}
+
+.hero-pause .button {
+  min-height: 0;
+  gap: 0.375rem;
+  padding: 0.25rem 0.6875rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.hero-pause .button:hover {
+  color: var(--text);
+}
+
+.hero-pause .button svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Pausado pelo botão: as peças param onde estão */
+.hero-scene.is-paused .piece > * {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .piece > * {
     animation: none;
+  }
+
+  /* sem animação, não há o que pausar */
+  .hero-pause {
+    display: none;
   }
 }
 
@@ -253,10 +296,6 @@ a {
   top: 3%;
   right: 0;
   z-index: 2;
-}
-.piece-ds {
-  top: 6%;
-  left: 0;
 }
 .piece-rose {
   top: 67%;
@@ -393,9 +432,8 @@ a {
     left: auto;
     right: 0;
   }
-  .piece-ds {
+  .hero-pause {
     top: 4%;
-    left: 0;
   }
   .piece-rose {
     top: 86%;
@@ -481,30 +519,40 @@ a {
 
 .project-cover span {
   display: block;
-  transition: transform 1.2s ease;
 }
 
 /* cada linha começa num ponto diferente da palavra */
 .project-cover span:first-child {
   transform: translateX(-4%);
+  animation: cover-line-left 4s linear infinite alternate paused;
 }
 
 .project-cover span:last-child {
   transform: translateX(-38%);
+  animation: cover-line-right 4s linear infinite alternate paused;
 }
 
-/* no hover do card, as linhas deslizam em direções opostas */
-.project-grid .card:hover .project-cover span:first-child {
-  transform: translateX(-14%);
+@keyframes cover-line-left {
+  from {
+    transform: translateX(-4%);
+  }
+  to {
+    transform: translateX(-24%);
+  }
 }
 
-.project-grid .card:hover .project-cover span:last-child {
-  transform: translateX(-28%);
+@keyframes cover-line-right {
+  from {
+    transform: translateX(-38%);
+  }
+  to {
+    transform: translateX(-18%);
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .project-cover span {
-    transition: none;
+@media (prefers-reduced-motion: no-preference) {
+  .project-grid .card:hover .project-cover span {
+    animation-play-state: running;
   }
 }
 
@@ -652,7 +700,6 @@ a {
     border-left: 0;
   }
 }
-
 
 /* ============ Como eu trabalho ============ */
 /* O título da seção é a frase-manifesto. A segunda linha vem em lilás. */
