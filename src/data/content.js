@@ -126,6 +126,8 @@ export const footer = [
 export const contact = {
   // Cada item é uma linha.
   text: ['Quer conversar sobre uma vaga ou um projeto?', 'Me chama.'],
+  // Linha de status embaixo dos links, com a bolinha verde
+  status: 'Campo Grande/MS, Brasil · Disponível para remoto',
   links: [
     { label: 'E-mail', href: 'mailto:bellakaroline1@gmail.com', icon: 'mail' },
     {

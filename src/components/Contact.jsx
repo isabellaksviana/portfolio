@@ -38,6 +38,10 @@ export default function Contact() {
           )
         })}
       </ul>
+      <p className="contact-status">
+        <span className="status-dot" aria-hidden="true"></span>
+        {contact.status}
+      </p>
     </Section>
   )
 }
