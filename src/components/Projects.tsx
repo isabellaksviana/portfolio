@@ -1,5 +1,5 @@
 import Section from './Section';
-import ProjectCard from './ProjectCard.jsx';
+import ProjectCard from './ProjectCard';
 import { projects } from '../data/content.js';
 
 export default function Projects() {

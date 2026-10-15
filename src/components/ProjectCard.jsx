@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Tag, Badge, Card } from 'ds-lab';
-import { GithubIcon } from './BrandIcons.jsx';
+import { GithubIcon } from './BrandIcons';
 
 export default function ProjectCard({ project }) {
   const { title, status, description, stack, demo, repo, cover } = project;
