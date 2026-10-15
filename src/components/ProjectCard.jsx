@@ -17,7 +17,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       <div className="project-card-body">
-        <Badge label={status} variant={isLive ? 'success' : 'secondary'} />
+        <Badge label={status} variant={isLive ? 'success' : 'warning'} />
         <h3 className="project-card-title">{title}</h3>
         <p className="project-card-text">{description}</p>
         <ul className="tags" aria-label="Tecnologias">
