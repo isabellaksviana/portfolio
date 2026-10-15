@@ -1,5 +1,5 @@
 import { Box, Component, FileText, UserCheck } from 'lucide-react';
-import Section from './Section.jsx';
+import Section from './Section';
 import { principles } from '../data/content.js';
 import { IconBox } from 'ds-lab';
 
