@@ -1,9 +1,9 @@
 import Header from './components/Header';
-import Hero from './components/Hero.jsx';
+import Hero from './components/Hero';
 import Projects from './components/Projects';
-import Facts from './components/Facts.jsx';
-import Principles from './components/Principles.jsx';
-import Contact from './components/Contact.jsx';
+import Facts from './components/Facts';
+import Principles from './components/Principles';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {

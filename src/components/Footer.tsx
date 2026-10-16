@@ -1,7 +1,7 @@
 import { CodeXml, type LucideIcon } from 'lucide-react';
 import { footer } from '../data/content';
 
-// Traduz o nome escrito no content.js para o componente do ícone.
+// Traduz o nome escrito no content.ts para o componente do ícone.
 const icons: Record<string, LucideIcon> = {
   code: CodeXml,
 };

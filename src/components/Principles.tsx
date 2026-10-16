@@ -1,10 +1,16 @@
-import { Box, Component, FileText, UserCheck } from 'lucide-react';
+import {
+  Box,
+  Component,
+  FileText,
+  UserCheck,
+  type LucideIcon,
+} from 'lucide-react';
 import Section from './Section';
 import { principles } from '../data/content';
 import { IconBox } from 'ds-lab';
 
-// Traduz o nome escrito no content.js para o componente do ícone.
-const icons = {
+// Traduz o nome escrito no content.ts para o componente do ícone.
+const icons: Record<string, LucideIcon> = {
   file: FileText,
   component: Component,
   box: Box,

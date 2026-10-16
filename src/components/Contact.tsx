@@ -1,10 +1,12 @@
+import type { ComponentType } from 'react';
 import { Mail } from 'lucide-react';
 import Section from './Section';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
 import { contact } from '../data/content';
 
-// Traduz o nome escrito no content.js para o componente do ícone.
-const icons = {
+// Traduz o nome escrito no content.ts para o componente do ícone.
+// Mistura ícones do Lucide com os de marca, então o tipo descreve só as props que os dois aceitam.
+const icons: Record<string, ComponentType<{ size?: number; 'aria-hidden'?: 'true' }>> = {
   mail: Mail,
   linkedin: LinkedinIcon,
   github: GithubIcon,
