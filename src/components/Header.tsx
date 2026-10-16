@@ -1,5 +1,5 @@
 import ThemeToggle from './ThemeToggle';
-import { profile } from '../data/content.js';
+import { profile } from '../data/content';
 
 const nav = [
   { href: '#projetos', label: 'Projetos' },

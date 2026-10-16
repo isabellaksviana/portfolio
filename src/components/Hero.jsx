@@ -1,5 +1,5 @@
 import { ArrowDown, Send, Cat, Rose, Play, Pause } from 'lucide-react';
-import { profile } from '../data/content.js';
+import { profile } from '../data/content';
 import { Button, Card, Tag, Badge, IconBox } from 'ds-lab';
 import CodeWindow from './CodeWindow.jsx';
 import { useState } from 'react';

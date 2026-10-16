@@ -1,6 +1,6 @@
 import Section from './Section';
 import ProjectCard from './ProjectCard';
-import { projects } from '../data/content.js';
+import { projects } from '../data/content';
 
 export default function Projects() {
   return (

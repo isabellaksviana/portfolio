@@ -1,6 +1,6 @@
 import { Box, Component, FileText, UserCheck } from 'lucide-react';
 import Section from './Section';
-import { principles } from '../data/content.js';
+import { principles } from '../data/content';
 import { IconBox } from 'ds-lab';
 
 // Traduz o nome escrito no content.js para o componente do ícone.

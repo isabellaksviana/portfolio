@@ -1,7 +1,7 @@
 import { Mail } from 'lucide-react';
 import Section from './Section';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
-import { contact } from '../data/content.js';
+import { contact } from '../data/content';
 
 // Traduz o nome escrito no content.js para o componente do ícone.
 const icons = {
