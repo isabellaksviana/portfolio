@@ -36,7 +36,7 @@ export const about = {
 // Endereço do GitHub: usado nos cards de projeto e no contato
 const github = 'https://github.com/isabellaksviana';
 
-type Project = {
+export type Project = {
   title: string;
   cover: string;
   description: string;
