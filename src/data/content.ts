@@ -36,8 +36,18 @@ export const about = {
 // Endereço do GitHub: usado nos cards de projeto e no contato
 const github = 'https://github.com/isabellaksviana';
 
+export type Project = {
+  title: string;
+  cover: string;
+  description: string;
+  repo: string;
+  stack: string[];
+  demo?: string;
+  status: 'Em construção' | 'No ar';
+};
+
 // cover: a palavra grande da capa (é decoração; o título de verdade vem logo abaixo)
-export const projects = [
+export const projects: Project[] = [
   {
     cover: 'Design System',
     title: 'Design System próprio',

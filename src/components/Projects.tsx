@@ -1,6 +1,6 @@
-import Section from './Section.jsx'
-import ProjectCard from './ProjectCard.jsx'
-import { projects } from '../data/content.js'
+import Section from './Section';
+import ProjectCard from './ProjectCard';
+import { projects } from '../data/content';
 
 export default function Projects() {
   return (
@@ -11,5 +11,5 @@ export default function Projects() {
         ))}
       </div>
     </Section>
-  )
+  );
 }

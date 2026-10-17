@@ -1,16 +1,18 @@
-import ThemeToggle from './ThemeToggle.jsx'
-import { profile } from '../data/content.js'
+import ThemeToggle from './ThemeToggle';
+import { profile } from '../data/content';
 
 const nav = [
   { href: '#projetos', label: 'Projetos' },
   { href: '#contato', label: 'Contato' },
-]
+];
 
 export default function Header() {
   return (
     <header className="header">
       <div className="container header-inner">
-        <a href="#top" className="logo">{profile.name}</a>
+        <a href="#top" className="logo">
+          {profile.name}
+        </a>
         <nav aria-label="Principal">
           <ul className="nav-list">
             {nav.map((item) => (
@@ -23,5 +25,5 @@ export default function Header() {
         <ThemeToggle />
       </div>
     </header>
-  )
+  );
 }

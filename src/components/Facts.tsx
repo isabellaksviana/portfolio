@@ -1,5 +1,5 @@
 import { Tag } from 'ds-lab';
-import { now, about, skills } from '../data/content.js';
+import { now, about, skills } from '../data/content';
 
 // Faixa logo depois dos projetos: o que eu faço agora (linha própria, em cima),
 // e embaixo a formação e o que eu uso no dia a dia.

@@ -1,8 +1,9 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Tag, Badge, Card } from 'ds-lab';
-import { GithubIcon } from './BrandIcons.jsx';
+import { GithubIcon } from './BrandIcons';
+import type { Project } from '../data/content';
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project }: { project: Project }) {
   const { title, status, description, stack, demo, repo, cover } = project;
   const isLive = status === 'No ar';
   // a palavra se repete na linha pra nunca aparecer um buraco quando ela desliza
