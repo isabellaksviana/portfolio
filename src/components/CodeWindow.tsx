@@ -4,7 +4,12 @@ const prefersReducedMotion = window.matchMedia(
   '(prefers-reduced-motion: reduce)',
 ).matches;
 
-const code = [
+type CodePiece = {
+  text: string;
+  className?: string;
+};
+
+const code: CodePiece[] = [
   { text: 'import', className: 'code-keyword' },
   { text: ' ' },
   { text: '{', className: 'code-punct' },
